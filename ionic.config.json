@@ -1,0 +1,7 @@
+{
+  "name": "provaCapacitor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
