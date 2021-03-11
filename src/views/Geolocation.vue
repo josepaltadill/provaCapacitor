@@ -1,9 +1,16 @@
 <template>
   <ion-page>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Geolocation</ion-title>
+      </ion-toolbar>
+    </ion-header>
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Geolocation</ion-card-title>
-        <ion-card-subtitle>Your location is:</ion-card-subtitle>
+        <ion-card-title>La teva geolocalització és:</ion-card-title>
       </ion-card-header>
 
       <ion-item>
@@ -26,7 +33,7 @@
 
 <script>
 import { Plugins } from '@capacitor/core'
-import { IonPage, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonItem, IonButton } from '@ionic/vue'
+import { IonPage, IonMenuButton, IonHeader, IonButtons, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonIcon, IonItem, IonButton } from '@ionic/vue'
 import { walk } from 'ionicons/icons'
 export default {
   name: 'Geolocation',
@@ -43,6 +50,12 @@ export default {
       this.loc = loc
     }
   },
-  components: { IonPage, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonItem, IonButton }
+  components: { IonPage, IonMenuButton, IonHeader, IonButtons, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonIcon, IonItem, IonButton }
 }
 </script>
+
+<style>
+  .ion-page {
+    justify-content: normal;
+  }
+</style>
