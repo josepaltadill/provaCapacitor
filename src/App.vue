@@ -68,10 +68,10 @@ export default defineComponent({
         mdIcon: paperPlaneSharp
       },
       {
-        title: 'Vibrador',
+        title: 'Vibrator',
         url: '/vibrator',
-        iosIcon: heartOutline,
-        mdIcon: heartSharp
+        iosIcon: paperPlaneOutline,
+        mdIcon: paperPlaneSharp
       },
       {
         title: 'Share api',

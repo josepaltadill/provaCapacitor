@@ -6,11 +6,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '',
     redirect: '/geolocation'
   },
-    // TODO ELIMINAR
-  // {
-  //   path: '/folder/:id',
-  //   component: () => import ('../views/Folder.vue')
-  // },
   {
     path: '/geolocation',
     component: () => import ('../views/Geolocation.vue')
@@ -20,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import ('../views/DeviceInfo.vue')
   },
   {
-    path: '/vibrador',
+    path: '/vibrator',
     component: () => import ('../views/Vibrator.vue')
   },
   {
