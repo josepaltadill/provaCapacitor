@@ -10,23 +10,21 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
       <div id="container">
-        <strong class="capitalize">{{ $route.params.id }}</strong>
-        <strong>Share api</strong>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ion-text>
+          <div class="content">
+          <h1>Vuetify - Aplicació Todos</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci atque commodi, corporis dolorum excepturi impedit natus obcaecati provident quod similique soluta voluptatibus voluptatum. Eligendi eos impedit odit omnis perferendis!</p>
+          </div>
+        </ion-text>
+        <ion-button @click="compartir()">Compartir Noticia</ion-button>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonText, IonButton } from '@ionic/vue';
 
 export default {
   name: 'Folder',
@@ -37,7 +35,9 @@ export default {
     IonMenuButton,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonText,
+    IonButton
   }
 }
 </script>
@@ -52,9 +52,9 @@ export default {
   transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.content {
+  max-width: 600px;
+  margin: 0 auto 30px;
 }
 
 #container p {

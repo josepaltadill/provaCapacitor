@@ -39,7 +39,8 @@ export default {
   },
   methods: {
     hapticsVibrate() {
-      Haptics.vibrate();
+      // Haptics.vibrate();
+      navigator.vibrate(300);
     }
   }
 }
