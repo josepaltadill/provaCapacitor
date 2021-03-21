@@ -86,6 +86,12 @@ export default defineComponent({
         mdIcon: trashSharp
       },
       {
+        title: 'Toast',
+        url: '/toast',
+        iosIcon: trashOutline,
+        mdIcon: trashSharp
+      },
+      {
         title: 'Camera',
         url: '/camera',
         iosIcon: warningOutline,
