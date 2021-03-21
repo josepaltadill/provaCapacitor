@@ -17,7 +17,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci atque commodi, corporis dolorum excepturi impedit natus obcaecati provident quod similique soluta voluptatibus voluptatum. Eligendi eos impedit odit omnis perferendis!</p>
           </div>
         </ion-text>
-        <ion-button @click="compartir()">Compartir Noticia</ion-button>
+        <ion-button @click="compartir">Compartir Noticia</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -25,9 +25,11 @@
 
 <script lang="ts">
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonText, IonButton } from '@ionic/vue';
+import { Plugins } from "@capacitor/core";
+const { Share } = Plugins;
 
 export default {
-  name: 'Folder',
+  name: 'ShareAPI',
   components: {
     IonButtons,
     IonContent,
@@ -38,6 +40,16 @@ export default {
     IonToolbar,
     IonText,
     IonButton
+  },
+  methods: {
+    async compartir() {
+      await Share.share({
+        title: 'Nova aplicació TODOS',
+        text: 'Explora tot el que la nostra aplicació et pot oferir',
+        url: 'http://nuxtvuetify.josepaltadill.codes/',
+        dialogTitle: 'Comparteix-ho amb els teus amics'
+      });
+    }
   }
 }
 </script>
