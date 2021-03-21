@@ -5,7 +5,7 @@
         <ion-buttons slot="start">
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
-        <ion-title>{{ $route.params.id }}</ion-title>
+        <ion-title>Share</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -43,12 +43,16 @@ export default {
   },
   methods: {
     async compartir() {
-      await Share.share({
-        title: 'Nova aplicació TODOS',
-        text: 'Explora tot el que la nostra aplicació et pot oferir',
-        url: 'http://nuxtvuetify.josepaltadill.codes/',
-        dialogTitle: 'Comparteix-ho amb els teus amics'
-      });
+      try {
+        await Share.share({
+          title: 'Nova aplicació TODOS',
+          text: 'Explora tot el que la nostra aplicació et pot oferir',
+          url: 'http://nuxtvuetify.josepaltadill.codes/',
+          dialogTitle: 'Comparteix-ho amb els teus amics'
+        });
+      } catch (err) {
+        console.log("error")
+      }
     }
   }
 }
