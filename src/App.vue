@@ -92,6 +92,12 @@ export default defineComponent({
         mdIcon: trashSharp
       },
       {
+        title: 'Motion',
+        url: '/motion',
+        iosIcon: trashOutline,
+        mdIcon: trashSharp
+      },
+      {
         title: 'Camera',
         url: '/camera',
         iosIcon: warningOutline,

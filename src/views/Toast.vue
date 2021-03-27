@@ -25,7 +25,7 @@ import { Plugins } from '@capacitor/core';
 const { Toast } = Plugins;
 
 export default {
-  name: 'Notifications',
+  name: 'Toast',
   components: {
     IonButtons,
     IonContent,
