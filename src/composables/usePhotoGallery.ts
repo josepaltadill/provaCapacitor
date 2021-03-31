@@ -104,6 +104,8 @@ export function usePhotoGallery() {
         });
     }
 
+    onMounted(loadSaved);
+
     watch(photos, cachePhotos);
 
     return {
@@ -111,10 +113,6 @@ export function usePhotoGallery() {
         takePhoto,
         deletePhoto
     };
-
-    onMounted(loadSaved);
-
-    watch(photos, cachePhotos);
 }
 export interface Photo {
     filepath: string;
