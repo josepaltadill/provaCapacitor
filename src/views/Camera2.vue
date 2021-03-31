@@ -32,17 +32,38 @@
 
 <script lang="ts">
 import { camera, trash, close } from 'ionicons/icons';
-import { IonButtons, IonMenuButton, IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonImg } from '@ionic/vue';
+import { actionSheetController, IonButtons, IonMenuButton, IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonImg } from '@ionic/vue';
 import { usePhotoGallery,  Photo} from '@/composables/usePhotoGallery';
 
 export default  {
   name: 'Camera2',
   components: { IonButtons, IonMenuButton, IonPage, IonHeader, IonFab, IonFabButton, IonIcon, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonImg },
   setup() {
-    const { photos, takePhoto } = usePhotoGallery();
+    const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+    const showActionSheet = async (photo: Photo) => {
+      const actionSheet = await actionSheetController.create({
+        header: 'Photos',
+        buttons: [{
+          text: 'Delete',
+          role: 'destructive',
+          icon: trash,
+          handler: () => {
+            deletePhoto(photo);
+          }}, {
+          text: 'Cancel',
+          icon: close,
+          role: 'cancel',
+          handler: () => {
+            // Nothing to do, action sheet is automatically closed
+          }
+        }]
+      });
+      await actionSheet.present();
+    }
     return {
       photos,
       takePhoto,
+      showActionSheet,
       camera, trash, close
     }
   }
