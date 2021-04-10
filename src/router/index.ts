@@ -45,7 +45,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: '/camera/camera1'
+        redirect: '/camera/camera2'
       },
       {
         path: 'camera1',
